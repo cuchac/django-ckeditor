@@ -85,13 +85,13 @@ var CKBUILDER_CONFIG = {
 		'listblock' : 1,
 		'indent' : 1,
 		'menubutton' : 1,
-		'mediaembed' : 1,
-		'floating-tools' : 1,
-		'htmlbuttons' : 1,
-		'autogrow' : 1
+		'autogrow' : 1,
+		'lineutils' : 1,
+		'widget' : 1,
+		'oembed' : 1
 	},
 	languages : {
 		'cs' : 1,
-		'en' : 1,
+		'en' : 1
 	}
 };

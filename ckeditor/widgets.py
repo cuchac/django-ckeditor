@@ -51,6 +51,8 @@ class CKEditor(forms.Textarea):
 
     def value_from_datadict(self, data, files, name):
         val = data.get(name, u'')
+        if not val:
+            return
         r = re.compile(r"""(.*?)(\s*<br\s*/?>\s*)*\Z""", re.MULTILINE | re.DOTALL)
         m = r.match(val)
         return m.groups()[0].strip()
