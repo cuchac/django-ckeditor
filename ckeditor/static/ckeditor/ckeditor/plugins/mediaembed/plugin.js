@@ -21,7 +21,7 @@
            CKEDITOR.dialog.add( 'MediaEmbedDialog', function (instance)
            {
               return {
-                 title : 'Embed Media',
+                 title : editor.lang.mediaembed.title,
                  minWidth : 550,
                  minHeight : 200,
                  contents :
@@ -32,8 +32,16 @@
                              elements :[{
                                 id : 'embedArea',
                                 type : 'textarea',
-                                label : 'Paste Embed Code Here',
+                                label : editor.lang.mediaembed.pasteCode,
                                 'autofocus':'autofocus',
+                                setup: function(element){
+                                },
+                                commit: function(element){
+                                }
+                             },{
+                                id : 'example',
+                                type : 'html',
+                                html : editor.lang.mediaembed.example,
                                 setup: function(element){
                                 },
                                 commit: function(element){
@@ -55,7 +63,7 @@
 
             editor.ui.addButton( 'MediaEmbed',
             {
-                label: 'Embed Media',
+                label: editor.lang.mediaembed.title,
                 command: 'MediaEmbed',
                 toolbar: 'mediaembed'
             } );
