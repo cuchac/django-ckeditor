@@ -1,5 +1,3 @@
-import re
-
 try:
     import simplejson as json
 except ImportError:
@@ -48,14 +46,6 @@ class CKEditor(forms.Textarea):
         return rendered +  mark_safe(render_to_string(
             'ckeditor/ckeditor_script.html', context
         ))
-
-    def value_from_datadict(self, data, files, name):
-        val = data.get(name, u'')
-        if not val:
-            return
-        r = re.compile(r"""(.*?)(\s*<br\s*/?>\s*)*\Z""", re.MULTILINE | re.DOTALL)
-        m = r.match(val)
-        return m.groups()[0].strip()
 
     class Media:
         js = (
